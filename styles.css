@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  padding-top: 80px;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color:black;
+  padding: 20px;
+  text-align: center;
+  justify-content: space-between;
+  position: fixed; /* Make the navbar fixed */
+  top: 0;          /* Position it at the top of the viewport */
+  width: 100%;     /* Ensure it spans the entire width */
+  z-index: 1000;   /* Ensure it appears above other elements */
+}
+header .user-profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+}
+header .user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+header .user-profile span {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+header .nav-logo img {
+  height: 40px;
+  margin-right: 15px;
+}
+header .nav-logo {
+  display: flex;
+  align-items: center;
+}
+header .nav-title {
+  flex-grow: 1;
+  text-align: center;
+}
+nav {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  margin-left: 100px;
+  width: 100%;
+  justify-content: center; 
+}
+nav a {
+  color: #14582c;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+nav .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+  height:30px;
+  width: 230px;
+  margin:0;
+}
+nav .search-bar input::placeholder {
+  background-color: transparent;
+  border: none;
+  color: grey;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  color:#0d0d0d
+}
+nav .search-bar button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+nav .search-bar .search-icon {
+  width: 24px;
+  height: 23px;
+}
+nav .home-link img {
+  width: 24px;
+  height: 24px;
+  margin-right:0;
+  vertical-align: middle;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent content overflow */
+}
+.sidebar {
+  width: 250px;
+  background-color: black;
+  padding: 20px;
+  transition: all 0.3s ease; /* Smooth transition */
+  flex-shrink: 0; /* Prevent sidebar from shrinking */ 
+   
+}
+.sidebar:hover {
+  background-color:  #2c2c2c; /* Change background color on hover */
+  width: 270px; /* Optionally increase the width on hover */
+}
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color:white;
+}
+.create-playlist i {
+  font-size: 20px;
+  color:white ;
+}
+.sidebar p {
+  font-size: 14px;
+  line-height: 1.6;
+  color:white;
+}
+.create-playlist {
+  display: flex;
+  align-items: center;
+  background-color: white; 
+  color:black;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+   margin-bottom: 20px;
+}
+.create-playlist img {
+  margin-right: 7px;
+}
+.podcast-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.podcast-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px; /* Rounded corners */
+  object-fit: cover; /* Ensures the image maintains aspect ratio */
+}
+.podcast-text {
+  font-size: 14px;
+  color: black;
+}
+.podcast-text p {
+  margin-bottom: 10px;
+}
+.browse-podcasts {
+  display: inline-block;
+  background-color: white; /* Spotify green */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+.browse-podcasts:hover {
+  background-color: rgb(6, 87, 6); /* Slightly darker green for hover effect */
+}
+.sidebar p {
+  margin-bottom: 15px;
+  font-size: 14px; 
+}
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  background-color: #121212; /* Optional: background color */
+  color: white; /* Optional: text color */
+}
+#song-info {
+  text-align: center;
+  color: white;
+}
+#song-image {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+#song-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+#artist-name {
+  font-size: 16px;
+  color: #aaaaaa;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+button {
+  background-color: #0d0d0d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+button:hover {
+  background-color: #1ed760;
+  color: #0d0d0d;
+}
+button:focus {
+  outline: none;
+}
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px 0;
+}
+#progress-bar {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+#current-time, #total-duration {
+  font-size: 14px;
+  color: white;
+}
+/* Artist Images Section */
+.artist-images {
+  text-align: left;
+  margin-top: 50px;
+}
+.artist-images h3 {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 25px;
+}
+.artist-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.artist-item {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;
+  margin: 5px;
+}
+.artist-item-round {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.artist-item-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+.artist-item-round img:hover {
+  transform: scale(1.1); /* Slightly enlarge the image */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+.artist-play-button {
+  position: absolute;
+  bottom: 18px;
+  right: 29px;
+  background:none;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.artist-play-button:hover {
+  color: white;  /* Ensure the color remains white */
+  transform: scale(1.2);  /* Scale the button up to 1.2x its size */
+  background: transparent;
+}
+.artist-item p {
+  margin: 0;
+  font-size: 14px;
+  text-align: center; /* Center-align text */
+}
+.popular-songs {
+  margin-top: 30px;
+}
+.popular-songs h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: white;
+}
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.song-item {
+  width: 180px;
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.song-item img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.song-item p {
+  font-size: 14px;
+  color: white;
+}
+.volume-co
+.song-info h2, .song-info p {
+  color:white;
+  margin-bottom: 10px;
+}
+.controls {
+  display: flex;
+  flex-direction: row; /* Stack buttons vertically */
+  justify-content: center;
+  align-items:center;     /* Center the buttons */
+  gap: 15px;               /* Add space between the buttons */  
+}
+button {
+  background-color: #0d0d0d;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #1ed760;
+}
+button:focus {
+  outline: none;
+}
+/* Progress Bar Styling */
+.progress-container {
+  width: 100%;              /* Make the container take up full width */
+  display: flex;
+  justify-content: center;  /* Center the progress bar horizontally */
+  margin-top: 15px;         /* Add spacing between the buttons and the progress bar */
+}
+footer {
+  text-align: center;
+  color:white;
+  padding: 10px;
+  background-color: #181818;
+  margin-top: 30px;
+}
+/* Style the song list to display items in a row */
+.song-list {
+  display: flex;
+  flex-wrap: wrap; /* Change to nowrap if you do not want songs to wrap to the next line */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 5px; /* Space between each song */
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+/* .song-item CSS for round shape */
+.song-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 200px;
+  height: 350px;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+/* Ensure that the last item in the first row doesn't have extra margin on the right */
+.song-list .song-item:nth-child(5n) {
+  margin-right: 0; /* Remove margin on the last item in each row */
+}
+.song-item-round {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+ /* border-radius: 50%;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 15px; /* Add curved corners to the round container */
+}
+.song-item-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;   /* Remove rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.song-item-round img:hover {
+  transform: scale(1.1); /* Slightly increase the size */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+.play-button {
+  position: absolute;
+  font-size: 35px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  bottom: -10px;   /* Position it 10px from the bottom */
+  right: -20px;    /* Position it 10px from the right */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+.play-button:hover {
+  color: white;  /* Ensure the color remains white */
+  transform: scale(1.2);  /* Scale the button up to 1.2x its size */
+  background: transparent;  /* Ensure no background color on hover */
+ opacity: 1; /* Fully visible on hover */
+  transform: scale(1.2); /* Enlarge button */ 
+}
+.song-item-details {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+.song-item-details p {
+  margin: 7px 0;
+}

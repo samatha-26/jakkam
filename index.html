@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <link rel="icon" type="image/png" href="spotify image.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .popular-songs h3 {
+      color: white; /* Replace with your desired color */
+    }
+    a {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-logo">
+      <img src="spotify image.jpg" alt="Spotify Logo">
+    </div>  
+    <nav>
+      <a href="#" class="home-link">
+      <img src="home.jpg" alt="Home" class="home-icon">
+      
+      <div class="search-bar">
+        <input type="text"id="search-bar" placeholder="Search...">
+        <button>
+          <!-- Replace the Font Awesome icon with an image -->
+          <img src="sreach.jpg" alt="Search" class="search-icon">
+        </button>
+      </div>
+    </nav>
+    <div class="user-profile">
+      <img src="user.png" alt="User Profile">
+      <span>welcome,samatha</span>
+  </div>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Your Library</h2>
+      <p><h2>Create your first playlist.</h2></p><p>It's easy,we'll help yo</p>
+      <button class="create-playlist">
+        <img src="plus-icon.jpg" alt="Add Playlist" style="width: 20px; height: 20px;">
+        Create Playlist
+      </button>
+      <div class="no-playlists"></div>
+      
+     <!-- Updated Browse Podcasts Section -->
+     
+  <h2>Your Podcasts</h2>
+  <p>Let’s find some podcasts to follow.</p><p>We’ll keep you updated on new episodes.</p>
+  <button class="browse-podcasts">
+    <img src="podcast.jpg" alt="Add podcasts" style="width: 20px; height: 20px;">
+    Browse Podcasts
+  </button>
+</aside>
+    <main class="main-content"> 
+    <!-- Song Info Section -->
+ <div id="song-info">
+  <img id="song-image" src="" alt="Song Image" class="song-image"/>
+  <h2 id="song-title">Song Name</h2>
+  <p id="artist-name">Artist Name</p>
+</div>
+       <div class="controls">
+        <button id="prev-btn">⏮</button>
+        <button id="play-btn">▶️</button>
+        <button id="next-btn">⏭</button>
+      </div>
+      <div class="progress-container">
+        <span id="current-time">0:00</span>
+        <input type="range" id="progress-bar" min="0" max="100" value="0">
+        <div class="time-info">
+        <span id="total-duration">0:00</span>
+      </div>
+     </div>
+     <section class="artist-images">
+      <h3>Popular Artists</h3>
+      <div class="artist-list" id="artist-list">
+        <!-- Artist images will be dynamically rendered here --> 
+      </div>
+    </section>
+      <section class="popular-songs">
+        <h3>Popular Songs</h3>
+        <div class="song-list" id="song-list">
+          <!-- Songs will be dynamically rendered here -->
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <p>© 2024 My Music App</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
